@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar> <ion-title> Recipes </ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let post of posts">
+      <!-- <h2>{{ person.name.first }}</h2> -->
+      <img [src]="post.data.url" />
+    </ion-item>
+  </ion-list>
+</ion-content>
