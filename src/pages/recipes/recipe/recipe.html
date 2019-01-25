@@ -1,16 +1,47 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{ avocadoToast.title }}</ion-title>
+    <ion-title>{{ this.recipeGroup.recipe[0].title }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <p>{{ avocadoToast.instructions }}</p>
-
-  <!-- <ion-list *ngFor="let ingredient of avocadoToast.ingredients">
-    <ion-item>{{ ingredient.id }} item</ion-item>
-    <ion-item>{{ ingredient.item }}</ion-item>
-    <ion-item>{{ ingredient.price }}</ion-item>
-    <button ion-button (click)="onAddToCart(ingredient)">Add To Cart</button>
-  </ion-list> -->
+  <div class="inner-recipe-page">
+    <div class="recipe-left">
+      <img
+        class="recipe-img"
+        src="https://img1.cookinglight.timeinc.net/sites/default/files/styles/medium_2x/public/image/2018/07/main/1807w-avocado-toast-recipe.jpg?itok=_dDi7ZQQ"
+      />
+      <p
+        *ngFor="let instruction of this.recipeGroup.recipe[0].instructions"
+        class="recipe-instructions"
+      >
+        <!-- {{ this.recipeGroup.recipe[0].instructions.text }} -->
+        {{ instruction.text }}
+      </p>
+    </div>
+    <div class="recipe-right">
+      <h2 class="ingredients-title">Ingredients:</h2>
+      <ion-list
+        class="recipe-list"
+        *ngFor="let ingredient of this.recipeGroup.recipe[0].ingredients"
+      >
+        <div class="list-items">
+          <ion-item class="list-id">{{ ingredient.id }}</ion-item>
+          <ion-item>{{ ingredient.item }}</ion-item>
+          <ion-item>{{ ingredient.price }}</ion-item>
+        </div>
+        <div class="button-div">
+          <button
+            ion-button
+            small
+            align-right
+            class="list-button"
+            (click)="onAddToCart(ingredient)"
+          >
+            Add To Cart
+          </button>
+        </div>
+      </ion-list>
+    </div>
+  </div>
 </ion-content>

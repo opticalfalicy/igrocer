@@ -1,0 +1,16 @@
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  height: 20%;
+
+  .card-title {
+    font-size: 170%;
+  }
+
+  .item-button {
+    width: 50%;
+  }
+}

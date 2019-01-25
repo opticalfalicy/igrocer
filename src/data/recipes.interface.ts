@@ -3,3 +3,7 @@ export interface Ingredient {
   item: string;
   price: string;
 }
+
+export interface Instruction {
+  text: string;
+}

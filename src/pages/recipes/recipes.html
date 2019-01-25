@@ -3,8 +3,15 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let recipeGroup of recipeCollection">
-    <h2>{{ recipeGroup.title }}</h2>
-    <button ion-button (click)="onLoadRecipe('toast')">To Recipe</button>
+  <ion-card class="recipe-card" *ngFor="let recipeGroup of recipeCollection">
+    <h2 text-center class="card-title">{{ recipeGroup.title }}</h2>
+    <button
+      class="item-button"
+      ion-button
+      small
+      (click)="onLoadRecipe('toast')"
+    >
+      View Recipe
+    </button>
   </ion-card>
 </ion-content>

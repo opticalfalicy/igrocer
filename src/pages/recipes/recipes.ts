@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
-import { Ingredient } from "../../data/recipes.interface";
+import { Ingredient, Instruction } from "../../data/recipes.interface";
 import recipes from "../../data/recipes";
 import { RecipePage } from "./recipe/recipe";
 
@@ -12,7 +12,7 @@ import { RecipePage } from "./recipe/recipe";
 export class RecipesPage implements OnInit {
   recipeCollection: {
     title: string;
-    instructions: string;
+    instructions: Instruction[];
     ingredients: Ingredient[];
   }[];
   // recipesPage = RecipesPage;
@@ -28,6 +28,7 @@ export class RecipesPage implements OnInit {
 
   ngOnInit() {
     this.recipeCollection = recipes;
+    console.log("init", this.recipeCollection);
   }
   // recipeGroup: {
   //   title: string;

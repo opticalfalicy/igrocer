@@ -3,10 +3,16 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-list>
-    <ion-item *ngFor="let item of items">
-      <h2>{{ item.title }}</h2>
-      <p>{{ item.price }}</p>
-    </ion-item>
-  </ion-list> -->
+  <div class="the-cart-content">
+    <ion-card *ngFor="let item of items">
+      <ion-card-content>
+        <h2>{{ item.item }}</h2>
+        <p>{{ item.price }}</p>
+        <button (click)="onRemoveIngredient(item)">X</button>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button class="checkout-button" (click)="onClearCart()">
+      Checkout
+    </button>
+  </div>
 </ion-content>

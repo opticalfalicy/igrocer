@@ -1,8 +1,16 @@
 export default [
   {
     title: "Avocado Toast",
-    instructions:
-      "1.Toast 2 slices of whole grain in a toaster until golden and crispy. 2. In a small bowl combine and mash the avocado, cilantro, lime, and salt + pepper to taste. Spread half of the mixture on each slice of toasted bread. Top with fried, scrambled, or poached egg if desired.",
+    instructions: [
+      {
+        text:
+          "1.Toast 2 slices of whole grain in a toaster until golden and crispy."
+      },
+      {
+        text:
+          "2. In a small bowl combine and mash the avocado, cilantro, lime, and salt + pepper to taste. Spread half of the mixture on each slice of toasted bread. Top with fried, scrambled, or poached egg if desired."
+      }
+    ],
     ingredients: [
       {
         id: "1",
@@ -11,7 +19,7 @@ export default [
       },
       {
         id: "2",
-        item: "Whole Wheat Bread",
+        item: "Bread",
         price: "$1.49"
       },
       {
@@ -21,7 +29,7 @@ export default [
       },
       {
         id: "5",
-        item: "Limr",
+        item: "Lime",
         price: "$1.89"
       },
       {
