@@ -9,15 +9,25 @@ import { HomePage } from "../pages/home/home";
 import { TabsPage } from "../pages/tabs/tabs";
 import { RecipesPage } from "../pages/recipes/recipes";
 import { CartPage } from "../pages/cart/cart";
+import { RecipePage } from "../pages/recipes/recipe/recipe";
+import { CartService } from "../services/cart";
 
 @NgModule({
-  declarations: [MyApp, HomePage, TabsPage, RecipesPage, CartPage],
+  declarations: [MyApp, HomePage, TabsPage, RecipesPage, RecipePage, CartPage],
   imports: [BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, TabsPage, RecipesPage, CartPage],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    TabsPage,
+    RecipesPage,
+    CartPage,
+    RecipePage
+  ],
   providers: [
     StatusBar,
     SplashScreen,
+    CartService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
     // RecipeServiceProvider,
   ]

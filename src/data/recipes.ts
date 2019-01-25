@@ -1,7 +1,7 @@
 export default [
   {
     title: "Avocado Toast",
-    instuctions:
+    instructions:
       "1.Toast 2 slices of whole grain in a toaster until golden and crispy. 2. In a small bowl combine and mash the avocado, cilantro, lime, and salt + pepper to taste. Spread half of the mixture on each slice of toasted bread. Top with fried, scrambled, or poached egg if desired.",
     ingredients: [
       {

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { Ingredient } from "../../data/recipes.interface";
 import recipes from "../../data/recipes";
+import { RecipePage } from "./recipe/recipe";
 
 @Component({
   selector: "page-recipes",
@@ -17,6 +18,13 @@ export class RecipesPage implements OnInit {
   // recipesPage = RecipesPage;
 
   constructor(public navCtrl: NavController, navParams: NavParams) {}
+  // onLoadRecipe(title: string, instructions: string) {
+  //   this.navCtrl.push(RecipePage, { title: title, instructions: instructions });
+  // }
+  onLoadRecipe(recipe: Object) {
+    this.navCtrl.push(RecipePage, { recipe: this.recipeCollection });
+  }
+  recipesPage = RecipesPage;
 
   ngOnInit() {
     this.recipeCollection = recipes;

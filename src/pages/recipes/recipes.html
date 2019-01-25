@@ -5,6 +5,6 @@
 <ion-content padding>
   <ion-card *ngFor="let recipeGroup of recipeCollection">
     <h2>{{ recipeGroup.title }}</h2>
-    <button ion-button></button>
+    <button ion-button (click)="onLoadRecipe('toast')">To Recipe</button>
   </ion-card>
 </ion-content>
