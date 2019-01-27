@@ -22,12 +22,12 @@ export class CartPage {
 
   onRemoveIngredient(item: Ingredient) {
     this.cartServ.removeItemFromCart(item);
-    this.navCtrl.goToRoot();
+    // this.navCtrl.goToRoot();
     console.log(this.items);
   }
 
   onClearCart() {
     this.cartServ.clearCart();
-    this.navCtrl.goToRoot();
+    // this.navCtrl.goToRoot();
   }
 }
