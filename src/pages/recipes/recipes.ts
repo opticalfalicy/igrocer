@@ -40,7 +40,7 @@ export class RecipesPage implements OnInit {
       if (recipes[i]._id == id) {
         console.log("success", recipes[i]);
 
-        // this.navCtrl.push(RecipePage, { recipe: recipes[i] });
+        this.navCtrl.push(RecipePage, { recipe: recipes[i] });
       }
       // this.navCtrl.push(RecipePage, { recipe: this.recipes });
       // else {
