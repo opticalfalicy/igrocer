@@ -49,10 +49,18 @@
       margin-bottom: 10px;
 
       .list-items {
-        width: 60%;
+        width: 101%;
+        word-wrap: break-word;
+        text-align: center;
 
         .list-id {
           display: none;
+        }
+        .list-item {
+          text-align: center;
+        }
+        .list-price {
+          text-align: center;
         }
       }
 
@@ -60,10 +68,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 38%;
+        width: 100%;
 
         .list-button {
-          width: 100%;
+          width: 50%;
           font-size: 80%;
           background: white;
           color: black;
