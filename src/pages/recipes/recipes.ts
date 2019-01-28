@@ -3,6 +3,7 @@ import { NavController, NavParams } from "ionic-angular";
 import { Ingredient, Instruction } from "../../data/recipes.interface";
 import recipes from "../../data/recipes";
 import { RecipePage } from "./recipe/recipe";
+import { RestProvider } from "../../providers/rest/rest";
 
 @Component({
   selector: "page-recipes",
@@ -15,20 +16,44 @@ export class RecipesPage implements OnInit {
     instructions: Instruction[];
     ingredients: Ingredient[];
   }[];
+
+  recipes: any;
+
   // recipesPage = RecipesPage;
 
-  constructor(public navCtrl: NavController, navParams: NavParams) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public rP: RestProvider
+  ) {
+    this.getRecipes();
+  }
   // onLoadRecipe(title: string, instructions: string) {
   //   this.navCtrl.push(RecipePage, { title: title, instructions: instructions });
   // }
-  onLoadRecipe(recipe: Object) {
-    this.navCtrl.push(RecipePage, { recipe: this.recipeCollection });
+  onLoadRecipe(id: any) {
+    // this.navCtrl.push(RecipePage, { recipe: this.recipeCollection });
+    console.log(id);
+    let recipes = this.recipes;
+    for (let i = 0; i < recipes.length; i++) {
+      // console.log(recipes[i]._id);
+      if (recipes[i]._id == id) {
+        console.log("success", recipes[i]);
+
+        this.navCtrl.push(RecipePage, { recipe: recipes[i] });
+      }
+      // this.navCtrl.push(RecipePage, { recipe: this.recipes });
+      // else {
+      //   alert("Theres been a mistake...");
+      // }
+    }
   }
   recipesPage = RecipesPage;
 
   ngOnInit() {
-    this.recipeCollection = recipes;
-    console.log("init", this.recipeCollection);
+    // this.recipeCollection = recipes;
+    // recipes = this.recipes;
+    // console.log("init", this.recipeCollection);
   }
   // recipeGroup: {
   //   title: string;
@@ -41,4 +66,11 @@ export class RecipesPage implements OnInit {
   // ngOnInit() {
   //   this.recipeGroup = this.navParams.data;
   // }
+
+  getRecipes() {
+    this.rP.getRecipes().then(data => {
+      this.recipes = data;
+      console.log(this.recipes);
+    });
+  }
 }

@@ -1,45 +1,37 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{ this.recipeGroup.recipe[0].title }}</ion-title>
+    <ion-title>{{ recipe.title }}</ion-title>
+    <!-- <ion-title>{{ this.recipeGroup.recipe[0].title }}</ion-title> -->
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <div class="inner-recipe-page">
     <div class="recipe-left">
-      <img
-        class="recipe-img"
-        src="https://img1.cookinglight.timeinc.net/sites/default/files/styles/medium_2x/public/image/2018/07/main/1807w-avocado-toast-recipe.jpg?itok=_dDi7ZQQ"
-      />
-      <p
-        *ngFor="let instruction of this.recipeGroup.recipe[0].instructions"
+      <img class="recipe-img" src="{{ recipe.img }}" />
+      <div
         class="recipe-instructions"
+        *ngFor="let i of recipe.instructions; let step = index"
       >
         <!-- {{ this.recipeGroup.recipe[0].instructions.text }} -->
-        {{ instruction.text }}
-      </p>
+        <h3>Step {{ step + 1 }}:</h3>
+        <p>{{ i.text }}</p>
+        <!-- <br /> -->
+      </div>
     </div>
     <div class="recipe-right">
       <h2 class="ingredients-title">Ingredients:</h2>
-      <ion-list
-        class="recipe-list"
-        *ngFor="let ingredient of this.recipeGroup.recipe[0].ingredients"
-      >
+      <ion-list class="recipe-list" *ngFor="let i of recipe.ingredients">
         <div class="list-items">
-          <ion-item class="list-id">{{ ingredient.id }}</ion-item>
-          <ion-item>{{ ingredient.item }}</ion-item>
-          <ion-item>{{ ingredient.price }}</ion-item>
-        </div>
-        <div class="button-div">
-          <button
-            ion-button
-            small
-            align-right
-            class="list-button"
-            (click)="onAddToCart(ingredient)"
-          >
-            Add To Cart
-          </button>
+          <ion-item class="list-id">{{ i.id }}</ion-item>
+          <ion-item class="list-item">{{ i.item }}</ion-item>
+          <ion-item class="list-price">${{ i.price }}</ion-item>
+          <div class="button-div">
+            <button ion-button small align-right class="list-button">
+              <!-- (click)="onAddToCart(ingredient)" -->
+              Add To Cart
+            </button>
+          </div>
         </div>
       </ion-list>
     </div>

@@ -10,11 +10,13 @@ import { CartService } from "../../../services/cart";
   // providers: [RecipeServiceProvider]
 })
 export class RecipePage implements OnInit {
-  recipeGroup: {
-    title: string;
-    instructions: Instruction[];
-    ingredients: Ingredient[];
-  };
+  // recipeGroup: {
+  //   title: string;
+  //   instructions: Instruction[];
+  //   ingredients: Ingredient[];
+  // };
+
+  recipe: any;
 
   constructor(
     public navCtrl: NavController,
@@ -23,9 +25,11 @@ export class RecipePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.recipeGroup = this.navParams.data;
-    console.log(this.recipeGroup);
+    // this.recipeGroup = this.navParams.data;
+    // console.log(this.recipeGroup);
     // this.avocadoToast = this.recipeGroup.recipe[0];
+    this.recipe = this.navParams.data.recipe;
+    console.log(this.recipe.title);
   }
 
   onAddToCart(selectedItem: Ingredient) {
