@@ -58,6 +58,13 @@
         }
         .list-item {
           text-align: center;
+          .item-inner {
+            .input-wrapper {
+              .label {
+                white-space: normal;
+              }
+            }
+          }
         }
         .list-price {
           text-align: center;
