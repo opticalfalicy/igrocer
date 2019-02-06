@@ -1,7 +1,6 @@
 <ion-header>
   <ion-navbar>
     <ion-title>{{ recipe.title }}</ion-title>
-    <!-- <ion-title>{{ this.recipeGroup.recipe[0].title }}</ion-title> -->
   </ion-navbar>
 </ion-header>
 
@@ -13,10 +12,8 @@
         class="recipe-instructions"
         *ngFor="let i of recipe.instructions; let step = index"
       >
-        <!-- {{ this.recipeGroup.recipe[0].instructions.text }} -->
         <h3>Step {{ step + 1 }}:</h3>
         <p>{{ i.text }}</p>
-        <!-- <br /> -->
       </div>
     </div>
     <div class="recipe-right">
@@ -27,8 +24,13 @@
           <ion-item class="list-item">{{ i.item }}</ion-item>
           <ion-item class="list-price">${{ i.price }}</ion-item>
           <div class="button-div">
-            <button ion-button small align-right class="list-button">
-              <!-- (click)="onAddToCart(ingredient)" -->
+            <button
+              ion-button
+              small
+              align-right
+              class="list-button"
+              (click)="onAddToCart(i)"
+            >
               Add To Cart
             </button>
           </div>
