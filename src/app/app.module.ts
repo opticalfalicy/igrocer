@@ -9,27 +9,17 @@ import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
 import { TabsPage } from "../pages/tabs/tabs";
 import { RecipesPage } from "../pages/recipes/recipes";
-import { CartPage } from "../pages/cart/cart";
 import { RecipePage } from "../pages/recipes/recipe/recipe";
-import { CartService } from "../services/cart";
 import { RestProvider } from "../providers/rest/rest";
 
 @NgModule({
-  declarations: [MyApp, HomePage, TabsPage, RecipesPage, RecipePage, CartPage],
+  declarations: [MyApp, HomePage, TabsPage, RecipesPage, RecipePage],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    TabsPage,
-    RecipesPage,
-    CartPage,
-    RecipePage
-  ],
+  entryComponents: [MyApp, HomePage, TabsPage, RecipesPage, RecipePage],
   providers: [
     StatusBar,
     SplashScreen,
-    CartService,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     RestProvider
     // RecipeServiceProvider,
