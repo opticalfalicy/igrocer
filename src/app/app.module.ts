@@ -22,7 +22,6 @@ import { RestProvider } from "../providers/rest/rest";
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     RestProvider
-    // RecipeServiceProvider,
   ]
 })
 export class AppModule {}

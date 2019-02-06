@@ -1,7 +1,6 @@
 <ion-header>
   <ion-navbar>
     <ion-title>{{ recipe.title }}</ion-title>
-    <!-- <ion-title>{{ this.recipeGroup.recipe[0].title }}</ion-title> -->
   </ion-navbar>
 </ion-header>
 
@@ -13,10 +12,8 @@
         class="recipe-instructions"
         *ngFor="let i of recipe.instructions; let step = index"
       >
-        <!-- {{ this.recipeGroup.recipe[0].instructions.text }} -->
         <h3>Step {{ step + 1 }}:</h3>
         <p>{{ i.text }}</p>
-        <!-- <br /> -->
       </div>
     </div>
     <div class="recipe-right">
